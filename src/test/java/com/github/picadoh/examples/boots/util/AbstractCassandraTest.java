@@ -20,7 +20,7 @@ import static org.testng.Assert.assertEquals;
  */
 public class AbstractCassandraTest {
 
-    protected CassandraEmbedded cassandra = new CassandraEmbedded(new ClassPathCQLDataSet("db_setup.cql", "sampleks"));
+    protected CassandraEmbedded cassandra = new CassandraEmbedded(new ClassPathCQLDataSet("db_setup.cql", "sampleks"), null, 60000L, 10000);
 
     @BeforeClass
     public void tearUp() throws Exception {

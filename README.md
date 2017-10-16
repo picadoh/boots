@@ -5,16 +5,16 @@ Docker containers.
 
 The project's base directory will be referred to as $basedir from now on.
 
-**Pre-requisites**
-- Java JDK 8 installed and accessible through the execution path
-- Docker 1.10.3 installed, properly configured and with environment loaded
-- Maven 3 installed and accessible through the execution path
+**Requirements:**
+
+- Docker
 
 ### Docker
 It contains a Dockerfile for the application in the root path and a Dockerfile for Cassandra 
 in the cassandra folder that can be found in the root path.
 
 #### Cassandra Docker image
+
 **Building**
 
     cd $basedir/cassandra
@@ -28,10 +28,11 @@ in the cassandra folder that can be found in the root path.
 Please remove the -d option to run in the foreground.
 
 #### Spring Boot Docker image
+
 **Building**
 
     cd $basedir
-    mvn package docker:build
+    docker build -t picadoh/boots
 
 **Running**
 
