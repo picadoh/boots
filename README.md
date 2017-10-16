@@ -17,12 +17,10 @@ in the cassandra folder that can be found in the root path.
 
 **Building**
 
-    cd $basedir/cassandra
-    docker build -t picadoh/cassandra .
+    docker build -t picadoh/cassandra cassandra/.
 
 **Running**
 
-    cd $basedir/cassandra
     docker run -d --name cassandra -p 9042:9042 picadoh/cassandra
 
 Please remove the -d option to run in the foreground.
@@ -31,7 +29,6 @@ Please remove the -d option to run in the foreground.
 
 **Building**
 
-    cd $basedir
     docker build -t picadoh/boots
 
 **Running**

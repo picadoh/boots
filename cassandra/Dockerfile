@@ -6,7 +6,7 @@ RUN groupadd -r cassandra --gid=999 && useradd -r -g cassandra --uid=999 cassand
 
 # install
 ENV MIRROR http://apache.mirrors.pair.com/
-ENV VERSION 3.7
+ENV VERSION 3.11.1
 
 RUN curl $MIRROR/cassandra/$VERSION/apache-cassandra-$VERSION-bin.tar.gz | tar -xzf - -C /opt \
     && mv /opt/apache-cassandra-$VERSION /opt/cassandra \
