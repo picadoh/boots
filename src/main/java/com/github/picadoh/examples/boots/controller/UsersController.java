@@ -1,6 +1,6 @@
 package com.github.picadoh.examples.boots.controller;
 
-import com.github.picadoh.examples.boots.dao.PersonDao;
+import com.github.picadoh.examples.boots.repository.PersonRepository;
 import com.github.picadoh.examples.boots.domain.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,16 +14,16 @@ import java.util.List;
  */
 @Controller
 public class UsersController {
-    private PersonDao personDao;
+    private final PersonRepository personRepository;
 
     @Autowired
-    public UsersController(PersonDao personDao) {
-        this.personDao = personDao;
+    public UsersController(PersonRepository personRepository) {
+        this.personRepository = personRepository;
     }
 
     @RequestMapping("/")
     public String index(Model model) {
-        List<Person> people = personDao.findAll();
+        List<Person> people = personRepository.findAll();
         model.addAttribute("people", people);
         return "index";
     }

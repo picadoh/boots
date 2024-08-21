@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active:
+      - local
+
+cassandra:
+  hostname: ${CASSANDRA_HOST:localhost}
+  port: ${CASSANDRA_PORT:9042}
+  keyspace: ${CASSANDRA_KEYSPACE:localks}
